@@ -1,0 +1,21 @@
+import streamlit as st
+from agent import get_agent
+
+st.set_page_config(page_title="MediStream AI", layout="wide")
+
+st.title("🏥 MediStream AI – Live Healthcare Co-Pilot")
+st.write("Ask medical questions. Upload new research PDFs to see live updates.")
+
+query = st.text_input("Enter your medical question:")
+
+if query:
+    with st.spinner("Thinking with live data..."):
+        agent = get_agent()
+        result = agent(query)
+
+        st.subheader("🧠 Answer")
+        st.write(result["result"])
+
+        st.subheader("📄 Sources")
+        for doc in result["source_documents"]:
+            st.write(doc.metadata.get("path", "Unknown source"))
