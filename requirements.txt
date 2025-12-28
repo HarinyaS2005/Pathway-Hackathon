@@ -1,0 +1,7 @@
+pathway
+openai
+langchain
+langchain-community
+streamlit
+pypdf
+tiktoken
