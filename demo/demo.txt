@@ -1,0 +1,5 @@
+Demo Steps:
+1. Ask a medical question in the app
+2. Update a file inside medical_docs/
+3. Ask the same question again
+4. Observe instant updated response
